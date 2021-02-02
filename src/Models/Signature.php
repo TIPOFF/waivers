@@ -4,7 +4,6 @@ namespace Tipoff\Waivers\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Tipoff\Waivers\Database\Factories\SignatureFactory;
-use Tipoff\Support\Models\BaseModel;
 
 class Signature extends Model
 {

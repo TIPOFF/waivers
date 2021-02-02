@@ -3,8 +3,8 @@
 namespace Tipoff\Waivers\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Tipoff\Waivers\Database\Factories\SignatureFactory;
 use Tipoff\Support\Models\BaseModel;
+use Tipoff\Waivers\Database\Factories\SignatureFactory;
 
 class Signature extends BaseModel
 {

@@ -38,5 +38,10 @@ class CreateSignaturesTable extends Migration
             $table->boolean('valid_email')->default(true); // If email is undeliverable, need to change to false
             $table->timestamps();
         });
+
+        public function down()
+        {
+            Schema::dropIfExists('signatures');
+        }
     }
 }

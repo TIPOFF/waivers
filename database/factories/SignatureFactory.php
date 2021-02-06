@@ -22,7 +22,7 @@ class SignatureFactory extends Factory
     public function definition()
     {
         return [
-            'room_id'           => randomOrCreate(config('waivers.model_class.room')),
+            'room_id'           => randomOrCreate(config('tipoff.model_class.room')),
             'email'             => $this->faker->unique()->safeEmail,
             'name'              => $this->faker->name,
             'name_last'         => $this->faker->name,
@@ -30,8 +30,8 @@ class SignatureFactory extends Factory
             'zip'               => $this->faker->postcode,
             'playing'           => $this->faker->boolean,
             'minors'            => $this->faker->numberBetween(1, 8),
-            'image_id'          => randomOrCreate(config('waivers.model_class.image')),
-            'participant_id'    => randomOrCreate(config('waivers.model_class.participant')),
+            'image_id'          => randomOrCreate(config('tipoff.model_class.image')),
+            'participant_id'    => randomOrCreate(config('tipoff.model_class.participant')),
             'emailed_at'        => $this->faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now', $timezone = null),
             'valid_email'       => $this->faker->boolean,
         ];

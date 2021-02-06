@@ -9,16 +9,16 @@ class CreateSignaturesTable extends Migration
     public function up()
     {
         Schema::create('signatures', function (Blueprint $table) {
-            $roomModel = config('waivers.model_class.room');
+            $roomModel = config('tipoff.model_class.room');
             $roomTable = (new $roomModel)->getTable();
 
-            $bookingModel = config('waivers.model_class.booking');
+            $bookingModel = config('tipoff.model_class.booking');
             $bookingTable = (new $bookingModel)->getTable();
 
-            $imageModel = config('waivers.model_class.image');
+            $imageModel = config('tipoff.model_class.image');
             $imageTable = (new $imageModel)->getTable();
 
-            $participantModel = config('waivers.model_class.participant');
+            $participantModel = config('tipoff.model_class.participant');
             $participantTable = (new $participantModel)->getTable();
 
             $table->id();
@@ -38,10 +38,10 @@ class CreateSignaturesTable extends Migration
             $table->boolean('valid_email')->default(true); // If email is undeliverable, need to change to false
             $table->timestamps();
         });
+    }
 
-        public function down()
-        {
-            Schema::dropIfExists('signatures');
-        }
+    public function down()
+    {
+        Schema::dropIfExists('signatures');
     }
 }

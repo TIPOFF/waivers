@@ -1,7 +1,7 @@
 # Laravel Package for tracking Google waivers
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/tipoff/waivers.svg?style=flat-square)](https://packagist.org/packages/tipoff/waivers)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/tipoff/waivers/run-tests?label=tests)](https://github.com/tipoff/waivers/actions?query=workflow%3ATests+branch%3Amaster)
+![Tests](https://github.com/tipoff/waivers/workflows/Tests/badge.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/tipoff/waivers.svg?style=flat-square)](https://packagist.org/packages/tipoff/waivers)
 
 This is where your description should go.

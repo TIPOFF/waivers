@@ -2,13 +2,13 @@
 
 namespace Tipoff\Waivers\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Tipoff\Support\Models\BaseModel;
+use Tipoff\Support\Traits\HasPackageFactory;
 use Tipoff\Waivers\Database\Factories\SignatureFactory;
 
 class Signature extends BaseModel
 {
-    use HasFactory;
+    use HasPackageFactory;
 
     protected $guarded = ['id'];
 

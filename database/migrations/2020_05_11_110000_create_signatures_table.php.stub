@@ -10,7 +10,7 @@ class CreateSignaturesTable extends Migration
     {
         Schema::create('signatures', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(app('room'), 'room_id')->index();
+            $table->foreignIdFor(app('room'))->index();
             $table->foreignIdFor(app('booking'))->nullable();
             $table->string('email');
             $table->string('name')->nullable(); // first name of adult participant or minor's supervisor

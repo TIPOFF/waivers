@@ -2,9 +2,9 @@
 
 namespace Tipoff\Waivers\Policies;
 
-use Tipoff\Waivers\Models\Signature;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Tipoff\Waivers\Models\Signature;
 
 class SignaturePolicy
 {

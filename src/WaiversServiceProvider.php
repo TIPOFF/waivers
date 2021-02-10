@@ -2,8 +2,11 @@
 
 namespace Tipoff\Waivers;
 
+use Illuminate\Support\Facades\Gate;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Tipoff\Waivers\Models\Signature;
+use Tipoff\Waivers\Policies\SignaturePolicy;
 
 class WaiversServiceProvider extends PackageServiceProvider
 {
@@ -25,5 +28,10 @@ class WaiversServiceProvider extends PackageServiceProvider
             ->name('waivers')
             ->hasConfigFile()
             ->hasViews();
+    }
+
+    public function registeringPackage()
+    {
+        Gate::policy(Signature::class, SignaturePolicy::class);
     }
 }

@@ -36,11 +36,11 @@ class Signature extends BaseModel
 
     public function participant()
     {
-        return $this->belongsTo(config('tipoff.model_class.participant'), 'participant_id');
+        return $this->belongsTo(app('participant'), 'participant_id');
     }
 
     public function room()
     {
-        return $this->belongsTo(config('tipoff.model_class.room'), 'room_id');
+        return $this->belongsTo(app('room'), 'room_id');
     }
 }

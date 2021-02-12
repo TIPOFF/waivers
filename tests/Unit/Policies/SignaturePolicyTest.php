@@ -29,11 +29,9 @@ class SignaturePolicyTest extends TestCase
      */
     public function all_permissions_as_creator(string $permission, UserInterface $user, bool $expected)
     {
-        $discount = Signature::factory()->make([
-            'creator_id' => $user,
-        ]);
+        $signature = Signature::factory()->make();
 
-        $this->assertEquals($expected, $user->can($permission, $discount));
+        $this->assertEquals($expected, $user->can($permission, $signature));
     }
 
     public function data_provider_for_all_permissions_as_creator()
@@ -56,9 +54,9 @@ class SignaturePolicyTest extends TestCase
      */
     public function all_permissions_not_creator(string $permission, UserInterface $user, bool $expected)
     {
-        $discount = Signature::factory()->make();
+        $signature = Signature::factory()->make();
 
-        $this->assertEquals($expected, $user->can($permission, $discount));
+        $this->assertEquals($expected, $user->can($permission, $signature));
     }
 
     public function data_provider_for_all_permissions_not_creator()

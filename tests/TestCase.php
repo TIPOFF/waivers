@@ -7,6 +7,8 @@ namespace Tipoff\Waivers\Tests;
 use Tipoff\Support\SupportServiceProvider;
 use Tipoff\TestSupport\BaseTestCase;
 use Tipoff\Waivers\WaiversServiceProvider;
+use Spatie\Permission\PermissionServiceProvider;
+use Tipoff\Authorization\AuthorizationServiceProvider;
 
 class TestCase extends BaseTestCase
 {
@@ -14,6 +16,8 @@ class TestCase extends BaseTestCase
     {
         return [
             SupportServiceProvider::class,
+            AuthorizationServiceProvider::class,
+            PermissionServiceProvider::class,
             WaiversServiceProvider::class,
         ];
     }

@@ -10,8 +10,6 @@ class Signature extends BaseModel
 {
     use HasPackageFactory;
 
-    protected $guarded = ['id'];
-
     protected $casts = [
         'emailed_at' => 'datetime',
         'minors_names' => 'array',

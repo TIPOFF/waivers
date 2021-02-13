@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Tipoff\Waivers;
 
-use Tipoff\Waivers\Models\Signature;
-use Tipoff\Waivers\Policies\SignaturePolicy;
 use Tipoff\Support\TipoffPackage;
 use Tipoff\Support\TipoffServiceProvider;
+use Tipoff\Waivers\Policies\SignaturePolicy;
 
 class WaiversServiceProvider extends TipoffServiceProvider
 {

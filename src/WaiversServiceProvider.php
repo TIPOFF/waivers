@@ -6,8 +6,8 @@ namespace Tipoff\Waivers;
 
 use Tipoff\Waivers\Models\Signature;
 use Tipoff\Waivers\Policies\SignaturePolicy;
-use Tipoff\Waivers\Models\Signature;
-use Tipoff\Waivers\Policies\SignaturePolicy;
+use Tipoff\Support\TipoffPackage;
+use Tipoff\Support\TipoffServiceProvider;
 
 class WaiversServiceProvider extends TipoffServiceProvider
 {

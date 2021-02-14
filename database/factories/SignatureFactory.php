@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tipoff\Waivers\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;

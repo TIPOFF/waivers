@@ -46,10 +46,7 @@
         "laravel": {
             "providers": [
                 "Tipoff\\Waivers\\WaiversServiceProvider"
-            ],
-            "aliases": {
-                "Waivers": "Tipoff\\Waivers\\WaiversFacade"
-            }
+            ]
         }
     },
     "repositories": [

@@ -9,8 +9,8 @@ use Spatie\Permission\PermissionServiceProvider;
 use Tipoff\Authorization\AuthorizationServiceProvider;
 use Tipoff\Support\SupportServiceProvider;
 use Tipoff\TestSupport\BaseTestCase;
-use Tipoff\Waivers\WaiversServiceProvider;
 use Tipoff\Waivers\Tests\Support\Providers\NovaPackageServiceProvider;
+use Tipoff\Waivers\WaiversServiceProvider;
 
 class TestCase extends BaseTestCase
 {

@@ -6,6 +6,7 @@ namespace Tipoff\Waivers;
 
 use Tipoff\Support\TipoffPackage;
 use Tipoff\Support\TipoffServiceProvider;
+use Tipoff\Waivers\Models\Signature;
 use Tipoff\Waivers\Policies\SignaturePolicy;
 
 class WaiversServiceProvider extends TipoffServiceProvider
@@ -14,7 +15,7 @@ class WaiversServiceProvider extends TipoffServiceProvider
     {
         $package
             ->hasPolicies([
-                Waiver::class => SignaturePolicy::class,
+                Signature::class => SignaturePolicy::class,
             ])
             ->name('waivers')
             ->hasConfigFile();

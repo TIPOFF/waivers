@@ -18,7 +18,7 @@ use Tipoff\Support\Nova\Resource;
 
 class Signature extends Resource
 {
-    public static $model = \App\Models\Signature::class;
+    public static $model = \Tipoff\Waivers\Models\Signature::class;
 
     public static function label()
     {

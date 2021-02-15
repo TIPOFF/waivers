@@ -63,8 +63,8 @@ class Signature extends Resource
             Text::make('Name', function () {
                 return $this->name.' '.$this->name_last;
             }),
-            BelongsTo::make('Participant')->sortable(),
-            BelongsTo::make('Room')->sortable(),
+            BelongsTo::make('Participant', 'participant', nova('participant'))->sortable(),
+            BelongsTo::make('Room', 'room', nova('room'))->sortable(),
             DateTime::make('Signed', 'created_at')->sortable(),
         ];
     }
@@ -76,8 +76,8 @@ class Signature extends Resource
             Text::make('Last Name', 'name_last'),
             DateTime::make('Signed', 'created_at'),
             Boolean::make('Playing'),
-            BelongsTo::make('Participant'),
-            BelongsTo::make('Room'),
+            BelongsTo::make('Participant', 'participant', nova('participant')),
+            BelongsTo::make('Room', 'room', nova('room')),
             Date::make('Date of Birth', 'dob'),
             Number::make('Minors'),
             KeyValue::make('List of Minors', 'minors_names')->rules('json')

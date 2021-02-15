@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tipoff\Waivers\Models;
 
 use Tipoff\Support\Models\BaseModel;
@@ -9,8 +11,6 @@ use Tipoff\Waivers\Database\Factories\SignatureFactory;
 class Signature extends BaseModel
 {
     use HasPackageFactory;
-
-    protected $guarded = ['id'];
 
     protected $casts = [
         'emailed_at' => 'datetime',

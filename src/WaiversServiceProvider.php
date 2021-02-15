@@ -1,29 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tipoff\Waivers;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Tipoff\Support\TipoffPackage;
+use Tipoff\Support\TipoffServiceProvider;
+use Tipoff\Waivers\Models\Signature;
+use Tipoff\Waivers\Policies\SignaturePolicy;
 
-class WaiversServiceProvider extends PackageServiceProvider
+class WaiversServiceProvider extends TipoffServiceProvider
 {
-    public function boot()
+    public function configureTipoffPackage(TipoffPackage $package): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-
-        parent::boot();
-    }
-
-    public function configurePackage(Package $package): void
-    {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
         $package
+            ->hasPolicies([
+                Signature::class => SignaturePolicy::class,
+            ])
             ->name('waivers')
-            ->hasConfigFile()
-            ->hasViews();
+            ->hasConfigFile();
     }
 }

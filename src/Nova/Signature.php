@@ -81,16 +81,16 @@ class Signature extends BaseResource
             Date::make('Date of Birth', 'dob'),
             Number::make('Minors'),
             KeyValue::make('List of Minors', 'minors_names')->rules('json')
-            ->keyLabel('#')
-            ->valueLabel('Name')
-            ->resolveUsing(function ($minors) {
-                $collection = collect($minors);
-                $keyed = $collection->mapWithKeys(function ($item) {
-                    return [$item['id'] => $item['name']];
-                });
+                ->keyLabel('#')
+                ->valueLabel('Name')
+                ->resolveUsing(function ($minors) {
+                    $collection = collect($minors);
+                    $keyed = $collection->mapWithKeys(function ($item) {
+                        return [$item['id'] => $item['name']];
+                    });
 
-                return $keyed->all();
-            }),
+                    return $keyed->all();
+                }),
             DateTime::make('Email Sent', 'emailed_at'),
             Boolean::make('Valid Email'),
             ID::make(),

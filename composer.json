@@ -25,7 +25,8 @@
     "autoload": {
         "psr-4": {
             "Tipoff\\Waivers\\": "src",
-            "Tipoff\\Waivers\\Database\\Factories\\": "database/factories"
+            "Tipoff\\Waivers\\Database\\Factories\\": "database/factories",
+            "Tipoff\\Waivers\\Database\\Seeders\\": "database/seeders"
         }
     },
     "autoload-dev": {
@@ -45,10 +46,7 @@
         "laravel": {
             "providers": [
                 "Tipoff\\Waivers\\WaiversServiceProvider"
-            ],
-            "aliases": {
-                "Waivers": "Tipoff\\Waivers\\WaiversFacade"
-            }
+            ]
         }
     },
     "repositories": [

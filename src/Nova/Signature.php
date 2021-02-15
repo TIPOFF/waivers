@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Nova;
+namespace Tipoff\Waivers\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Tipoff\Support\Nova\Resource;
 
 class Signature extends Resource
 {

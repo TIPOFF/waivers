@@ -14,9 +14,9 @@ use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Tipoff\Support\Nova\Resource;
+use Tipoff\Support\Nova\BaseResource;
 
-class Signature extends Resource
+class Signature extends BaseResource
 {
     public static $model = \Tipoff\Waivers\Models\Signature::class;
 

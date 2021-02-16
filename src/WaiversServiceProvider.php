@@ -23,8 +23,8 @@ class WaiversServiceProvider extends TipoffServiceProvider
             ->hasEvents([
                 WaiverSigned::class => [
                     SendWaiverConfirmation::class,
-                    CreateParticipant::class
-                ]
+                    CreateParticipant::class,
+                ],
             ])
             ->name('waivers')
             ->hasConfigFile();

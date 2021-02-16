@@ -2,8 +2,8 @@
 
 namespace Tipoff\Waivers\Listeners;
 
-use Tipoff\Waivers\Events\WaiverSigned;
 use Carbon\Carbon;
+use Tipoff\Waivers\Events\WaiverSigned;
 
 class CreateParticipant
 {
@@ -41,9 +41,9 @@ class CreateParticipant
         $existing = app('feedback')->withTrashed()->where('participant_id', $participant->id)->where('location_id', $signature->room->location->id)->where('date', $date)->first();
         if (empty($existing)) {
             app('feedback')->create([
-                'participant_id'    => $participant->id,
-                'location_id'       => $signature->room->location->id,
-                'date'              => $date
+                'participant_id' => $participant->id,
+                'location_id' => $signature->room->location->id,
+                'date' => $date,
             ]);
         }
     }

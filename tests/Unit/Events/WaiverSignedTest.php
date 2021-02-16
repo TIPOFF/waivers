@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Tipoff\Waivers\Tests\Unit\Events;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Event;
 use Tipoff\Waivers\Events\WaiverSigned;
 use Tipoff\Waivers\Models\Signature;
 use Tipoff\Waivers\Tests\TestCase;
-use Illuminate\Support\Facades\Event;
 
 class WaiverSignedTest extends TestCase
 {

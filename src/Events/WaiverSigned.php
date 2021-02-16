@@ -2,15 +2,17 @@
 
 namespace Tipoff\Waivers\Events;
 
-use Tipoff\Waivers\Models\Signature;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Tipoff\Waivers\Models\Signature;
 
 class WaiverSigned
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable;
+    use InteractsWithSockets;
+    use SerializesModels;
 
     public $signature;
 

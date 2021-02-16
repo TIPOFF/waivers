@@ -14,9 +14,9 @@ use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Tipoff\Support\Nova\Resource;
+use Tipoff\Support\Nova\BaseResource;
 
-class Signature extends Resource
+class Signature extends BaseResource
 {
     public static $model = \Tipoff\Waivers\Models\Signature::class;
 
@@ -56,28 +56,33 @@ class Signature extends Resource
 
     public static $group = 'Reporting';
 
+    /** @psalm-suppress UndefinedClass */
+    protected array $filterClassList = [
+
+    ];
+
     public function fieldsForIndex(NovaRequest $request)
     {
-        return [
+        return array_filter([
             ID::make()->sortable(),
             Text::make('Name', function () {
                 return $this->name.' '.$this->name_last;
             }),
-            BelongsTo::make('Participant', 'participant', app()->getAlias('nova.participant'))->sortable(),
-            BelongsTo::make('Room', 'room', app()->getAlias('nova.room'))->sortable(),
+            nova('participant') ? BelongsTo::make('Participant', 'participant', nova('participant'))->sortable() : null,
+            nova('room') ? BelongsTo::make('Room', 'room', nova('room'))->sortable() : null,
             DateTime::make('Signed', 'created_at')->sortable(),
-        ];
+        ]);
     }
 
     public function fields(Request $request)
     {
-        return [
+        return array_filter([
             Text::make('First Name', 'name'),
             Text::make('Last Name', 'name_last'),
             DateTime::make('Signed', 'created_at'),
             Boolean::make('Playing'),
-            BelongsTo::make('Participant', 'participant', app()->getAlias('nova.participant')),
-            BelongsTo::make('Room', 'room', app()->getAlias('nova.room')),
+            nova('participant') ? BelongsTo::make('Participant', 'participant', nova('participant')) : null,
+            nova('room') ? BelongsTo::make('Room', 'room', nova('room')) : null,
             Date::make('Date of Birth', 'dob'),
             Number::make('Minors'),
             KeyValue::make('List of Minors', 'minors_names')->rules('json')
@@ -94,28 +99,6 @@ class Signature extends Resource
             DateTime::make('Email Sent', 'emailed_at'),
             Boolean::make('Valid Email'),
             ID::make(),
-        ];
-    }
-
-    public function cards(Request $request)
-    {
-        return [];
-    }
-
-    public function filters(Request $request)
-    {
-        return [
-            
-        ];
-    }
-
-    public function lenses(Request $request)
-    {
-        return [];
-    }
-
-    public function actions(Request $request)
-    {
-        return [];
+        ]);
     }
 }

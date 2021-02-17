@@ -58,7 +58,8 @@ class Signature extends BaseResource
 
     /** @psalm-suppress UndefinedClass */
     protected array $filterClassList = [
-
+        \Tipoff\EscapeRoom\Nova\Filters\RoomLocation::class,
+        \Tipoff\EscapeRoom\Nova\Filters\Room::class,
     ];
 
     public function fieldsForIndex(NovaRequest $request)

@@ -20,6 +20,9 @@ class WaiversServiceProvider extends TipoffServiceProvider
             ->hasPolicies([
                 Signature::class => SignaturePolicy::class,
             ])
+            ->hasNovaResources([
+                \Tipoff\Waivers\Nova\Signature::class,
+            ])
             ->hasEvents([
                 WaiverSigned::class => [
                     SendWaiverConfirmation::class,

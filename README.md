@@ -34,12 +34,17 @@ return [
 ];
 ```
 
-## Usage
+## Models
 
-```php
-$waivers = new Tipoff\Waivers();
-echo $waivers->echoPhrase('Hello, Tipoff!');
-```
+We include the following model:
+
+**List of Models**
+
+- Signature
+
+For each of these models, this package implements an [authorization policy](https://laravel.com/docs/8.x/authorization) that extennds the roles and permissions approach of the [tipoff/authorization](https://github.com/tipoff/authorization) package. The policies for each model in this package are registered through the package.
+
+The models also have [Laravel Nova resources](https://nova.laravel.com/docs/3.0/resources/) in this package and they are also registered through the package.
 
 ## Testing
 

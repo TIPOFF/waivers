@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Tipoff\Locations\Models\Location;
 
-class CreateLocationWaiversTable extends Migration
+class CreateWaiversTable extends Migration
 {
     public function up()
     {

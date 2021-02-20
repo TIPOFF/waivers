@@ -10,7 +10,7 @@ use Tipoff\Support\Traits\HasCreator;
 use Tipoff\Support\Traits\HasPackageFactory;
 use Tipoff\Support\Traits\HasUpdater;
 
-class LocationWaiver extends BaseModel
+class Waiver extends BaseModel
 {
     use HasCreator;
     use HasUpdater;

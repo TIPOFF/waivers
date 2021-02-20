@@ -14,7 +14,6 @@ use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Tipoff\Locations\Nova\Location;
 use Tipoff\Support\Nova\BaseResource;
 
 class Signature extends BaseResource

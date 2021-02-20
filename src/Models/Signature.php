@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tipoff\Waivers\Models;
 
-use Tipoff\Locations\Models\Location;
 use Tipoff\Support\Models\BaseModel;
 use Tipoff\Support\Traits\HasPackageFactory;
 use Tipoff\Waivers\Database\Factories\SignatureFactory;

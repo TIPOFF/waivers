@@ -21,11 +21,11 @@ class WaiversServiceProvider extends TipoffServiceProvider
         $package
             ->hasPolicies([
                 Signature::class => SignaturePolicy::class,
-                Waiver::class    => WaiverPolicy::class,
+                Waiver::class => WaiverPolicy::class,
             ])
             ->hasNovaResources([
                 \Tipoff\Waivers\Nova\Signature::class,
-                \Tipoff\Waivers\Nova\Waiver::class
+                \Tipoff\Waivers\Nova\Waiver::class,
             ])
             ->hasEvents([
                 WaiverSigned::class => [

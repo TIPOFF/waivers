@@ -26,7 +26,7 @@ class PermissionsMigrationTest extends TestCase
             'view waivers',
             'create waivers',
             'update waivers',
-            'delete waivers'
+            'delete waivers',
         ])->pluck('name');
 
         $this->assertCount(8, $seededPermissions);

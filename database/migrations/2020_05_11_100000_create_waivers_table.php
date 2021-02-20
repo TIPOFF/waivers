@@ -11,7 +11,7 @@ class CreateWaiversTable extends Migration
 {
     public function up()
     {
-        Schema::create('location_waivers', function (Blueprint $table) {
+        Schema::create('waivers', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Location::class)->unique();	// NOTE - unique() added -- there should be exactly one record per location!
             $table->text('waiver')->nullable(); // Waiver agreement for the location

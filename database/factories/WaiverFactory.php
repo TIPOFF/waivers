@@ -6,16 +6,16 @@ namespace Tipoff\Waivers\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Tipoff\Locations\Models\Location;
-use Tipoff\Waivers\Models\LocationWaiver;
+use Tipoff\Waivers\Models\Waiver;
 
-class LocationWaiverFactory extends Factory
+class WaiverFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = LocationWaiver::class;
+    protected $model = Waiver::class;
 
     /**
      * Define the model's default state.

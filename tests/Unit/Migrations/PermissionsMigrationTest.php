@@ -23,8 +23,12 @@ class PermissionsMigrationTest extends TestCase
             'create signatures',
             'update signatures',
             'delete signatures',
+            'view waivers',
+            'create waivers',
+            'update waivers',
+            'delete waivers'
         ])->pluck('name');
 
-        $this->assertCount(4, $seededPermissions);
+        $this->assertCount(8, $seededPermissions);
     }
 }

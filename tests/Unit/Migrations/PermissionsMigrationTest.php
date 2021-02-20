@@ -22,7 +22,7 @@ class PermissionsMigrationTest extends TestCase
             'view signatures',
             'create signatures',
             'update signatures',
-            'delete signatures'
+            'delete signatures',
         ])->pluck('name');
 
         $this->assertCount(4, $seededPermissions);

@@ -19,16 +19,12 @@ class PermissionsMigrationTest extends TestCase
         $this->assertTrue(Schema::hasTable('permissions'));
 
         $seededPermissions = app(Permission::class)->whereIn('name', [
-            'view signatures',
-            'create signatures',
-            'update signatures',
-            'delete signatures',
             'view waivers',
             'create waivers',
             'update waivers',
-            'delete waivers',
+            'view signatures',
         ])->pluck('name');
 
-        $this->assertCount(8, $seededPermissions);
+        $this->assertCount(4, $seededPermissions);
     }
 }

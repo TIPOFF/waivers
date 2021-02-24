@@ -17,7 +17,7 @@ class AddWaiverPermissions extends Migration
                 'view waivers',
                 'create waivers',
                 'update waivers',
-                'delete waivers'
+                'view signatures',
             ];
 
             foreach ($permissions as $permission) {

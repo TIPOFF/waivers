@@ -2,27 +2,19 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Migrations\Migration;
-use Spatie\Permission\Contracts\Permission;
-use Spatie\Permission\PermissionRegistrar;
+use Tipoff\Authorization\Permissions\BasePermissionsMigration;
 
-class AddWaiverPermissions extends Migration
+class AddWaiverPermissions extends BasePermissionsMigration
 {
     public function up()
     {
-        if (app()->has(Permission::class)) {
-            app(PermissionRegistrar::class)->forgetCachedPermissions();
+        $permissions = [
+            'view waivers',
+            'create waivers',
+            'update waivers',
+            'view signatures',
+        ];
 
-            $permissions = [
-                'view waivers',
-                'create waivers',
-                'update waivers',
-                'view signatures',
-            ];
-
-            foreach ($permissions as $permission) {
-                app(Permission::class)::findOrCreate($permission, null);
-            };
-        }
+        $this->createPermissions($permissions);
     }
 }

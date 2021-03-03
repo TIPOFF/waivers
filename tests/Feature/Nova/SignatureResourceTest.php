@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tipoff\Waivers\Tests\Feature\Nova;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Tipoff\TestSupport\Models\User;
 use Tipoff\Waivers\Models\Signature;
 use Tipoff\Waivers\Tests\TestCase;
 

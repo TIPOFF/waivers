@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Tipoff\Waivers\Tests\Unit\Policies;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Tipoff\Waivers\Models\Signature;
-use Tipoff\Waivers\Tests\TestCase;
 use Tipoff\Support\Contracts\Models\UserInterface;
 use Tipoff\TestSupport\Models\User;
+use Tipoff\Waivers\Models\Signature;
+use Tipoff\Waivers\Tests\TestCase;
 
 class SignaturePolicyTest extends TestCase
 {

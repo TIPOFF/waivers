@@ -18,7 +18,7 @@ class SignatureResourceTest extends TestCase
     {
         Signature::factory()->count(4)->create();
 
-        $this->actingAs(User::factory()->create());
+        $this->actingAs(self::createPermissionedUser('view signatures', true));
 
         $response = $this->getJson('nova-api/signatures')
             ->assertOk();

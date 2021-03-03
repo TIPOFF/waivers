@@ -18,7 +18,7 @@ class WaiverResourceTest extends TestCase
     {
         Waiver::factory()->count(1)->create();
 
-        $this->actingAs(User::factory()->create());
+        $this->actingAs(self::createPermissionedUser('view waivers', true));
 
         $response = $this->getJson('nova-api/waivers')->assertOk();
 

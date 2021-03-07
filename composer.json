@@ -28,7 +28,6 @@
         "psr-4": {
             "Tipoff\\Waivers\\": "src",
             "Tipoff\\Waivers\\Database\\Factories\\": "database/factories",
-            "Tipoff\\Waivers\\Database\\Seeders\\": "database/seeders"
         }
     },
     "autoload-dev": {

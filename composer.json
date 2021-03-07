@@ -17,12 +17,12 @@
     "require": {
         "php": "^7.4|^8.0",
         "drewroberts/media": "^3.2.2",
-        "tipoff/authorization": "^2.2.2",
-        "tipoff/locations": "^2.3.2",
-        "tipoff/support": "^1.5.3"
+        "tipoff/authorization": "^2.3.1",
+        "tipoff/locations": "^2.4.0",
+        "tipoff/support": "^1.5.8"
     },
     "require-dev": {
-        "tipoff/test-support": "^1.1.2"
+        "tipoff/test-support": "^1.2.0"
     },
     "autoload": {
         "psr-4": {

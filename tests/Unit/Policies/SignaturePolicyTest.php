@@ -32,7 +32,6 @@ class SignaturePolicyTest extends TestCase
         return [
             'view-true' => ['view', self::createPermissionedUser('view signatures', true), true],
             'view-false' => ['view', self::createPermissionedUser('view signatures', false), false],
-            'create-true' => ['create', self::createPermissionedUser('create signatures', true), true],
             'create-false' => ['create', self::createPermissionedUser('create signatures', false), false],
             'update-false' => ['update', self::createPermissionedUser('update signatures', false), false],
             'delete-true' => ['delete', self::createPermissionedUser('delete signatures', true), false],

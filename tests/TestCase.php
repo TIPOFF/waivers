@@ -26,10 +26,9 @@ class TestCase extends BaseTestCase
             AddressesServiceProvider::class,
             AuthorizationServiceProvider::class,
             PermissionServiceProvider::class,
+            MediaServiceProvider::class,
             WaiversServiceProvider::class,
             LocationsServiceProvider::class,
-            MediaServiceProvider::class,
-            AddressesServiceProvider::class,
         ];
     }
 }

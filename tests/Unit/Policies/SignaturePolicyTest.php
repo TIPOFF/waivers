@@ -27,22 +27,6 @@ class SignaturePolicyTest extends TestCase
         $this->assertFalse($unauthorizedUser->can('viewAny', Signature::class));
     }
 
-    /**
-     * @test
-     * @dataProvider data_provider_for_all_permissions_as_creator
-     * @param string $permission
-     * @param UserInterface $user
-     * @param bool $expected
-     */
-    public function all_permissions_as_creator(string $permission, UserInterface $user, bool $expected)
-    {
-        $signatures = Signature::factory()->make([
-            'creator_id' => $user,
-        ]);
-
-        $this->assertEquals($expected, $user->can($permission, $signatures));
-    }
-
     public function data_provider_for_all_permissions_as_creator()
     {
         return [
@@ -50,7 +34,6 @@ class SignaturePolicyTest extends TestCase
             'view-false' => ['view', self::createPermissionedUser('view signatures', false), false],
             'create-true' => ['create', self::createPermissionedUser('create signatures', true), true],
             'create-false' => ['create', self::createPermissionedUser('create signatures', false), false],
-            'update-true' => ['update', self::createPermissionedUser('update signatures', true), true],
             'update-false' => ['update', self::createPermissionedUser('update signatures', false), false],
             'delete-true' => ['delete', self::createPermissionedUser('delete signatures', true), false],
             'delete-false' => ['delete', self::createPermissionedUser('delete signatures', false), false],

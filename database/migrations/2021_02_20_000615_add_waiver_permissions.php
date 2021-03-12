@@ -9,10 +9,10 @@ class AddWaiverPermissions extends BasePermissionsMigration
     public function up()
     {
         $permissions = [
-            'view waivers',
-            'create waivers',
-            'update waivers',
-            'view signatures',
+            'view waivers' => ['Owner', 'Staff'],
+            'create waivers' => ['Owner'],
+            'update waivers' => ['Owner'],
+            'view signatures' => ['Owner', 'Staff']
         ];
 
         $this->createPermissions($permissions);

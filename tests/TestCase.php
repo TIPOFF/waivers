@@ -7,6 +7,7 @@ namespace Tipoff\Waivers\Tests;
 use DrewRoberts\Media\MediaServiceProvider;
 use Laravel\Nova\NovaCoreServiceProvider;
 use Spatie\Permission\PermissionServiceProvider;
+use Tipoff\Addresses\AddressesServiceProvider;
 use Tipoff\Authorization\AuthorizationServiceProvider;
 use Tipoff\Locations\LocationsServiceProvider;
 use Tipoff\Support\SupportServiceProvider;
@@ -27,6 +28,7 @@ class TestCase extends BaseTestCase
             WaiversServiceProvider::class,
             LocationsServiceProvider::class,
             MediaServiceProvider::class,
+            AddressesServiceProvider::class,
         ];
     }
 }

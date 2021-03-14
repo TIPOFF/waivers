@@ -16,10 +16,10 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "drewroberts/media": "^3.2.2",
-        "tipoff/authorization": "^2.5.1",
-        "tipoff/locations": "^2.4.0",
-        "tipoff/support": "^1.6.0"
+        "drewroberts/media": "^3.3.0",
+        "tipoff/authorization": "^2.5.5",
+        "tipoff/locations": "^2.4.4",
+        "tipoff/support": "^1.6.3"
     },
     "require-dev": {
         "tipoff/test-support": "^1.2.0"

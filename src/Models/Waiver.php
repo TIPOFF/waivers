@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tipoff\Waivers\Models;
 
-use Tipoff\Locations\Models\Location;
 use Tipoff\Support\Models\BaseModel;
 use Tipoff\Support\Traits\HasCreator;
 use Tipoff\Support\Traits\HasPackageFactory;
@@ -16,11 +15,19 @@ class Waiver extends BaseModel
     use HasUpdater;
     use HasPackageFactory;
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function (Waiver $waiver) {
+            if (empty($waiver->released_at)) {
+                $waiver->released_at = now();
+            }
+        });
+    }
+
     public function location()
     {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(app('location'));
     }
 }

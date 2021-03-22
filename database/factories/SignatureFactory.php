@@ -9,33 +9,22 @@ use Tipoff\Waivers\Models\Signature;
 
 class SignatureFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
     protected $model = Signature::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
     public function definition()
     {
         return [
             'room_id'           => randomOrCreate(app('room')),
             'email_address_id'  => randomOrCreate(app('email_address')),
-            'name'              => $this->faker->name,
-            'name_last'         => $this->faker->name,
+            'first_name'        => $this->faker->name,
+            'last_name'         => $this->faker->name,
+            'zip_code'          => randomOrCreate(app('zip')),
             'dob'               => $this->faker->date(),
-            'zip'               => $this->faker->postcode,
             'playing'           => $this->faker->boolean,
             'minors'            => $this->faker->numberBetween(1, 8),
             'image_id'          => randomOrCreate(app('image')),
             'participant_id'    => randomOrCreate(app('participant')),
             'emailed_at'        => $this->faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now', $timezone = null),
-            'valid_email'       => $this->faker->boolean,
         ];
     }
 }

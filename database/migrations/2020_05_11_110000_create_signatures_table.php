@@ -14,7 +14,7 @@ class CreateSignaturesTable extends Migration
             $table->id();
             $table->foreignIdFor(app('room'))->index();
             $table->foreignIdFor(app('booking'))->nullable();
-            $table->string('email');
+            $table->foreignIdFor(app('email_address'))->index();
             $table->string('name')->nullable(); // first name of adult participant or minor's supervisor
             $table->string('name_last')->nullable(); // last name of adult participant or minor's supervisor
             $table->date('dob')->nullable(); // date of birth of adult participant or minor's supervisor

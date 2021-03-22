@@ -27,7 +27,7 @@ class CreateParticipant
     {
         $signature = $event->signature;
 
-        $participant = app('participant')->withTrashed()->firstOrNew(['email' => $signature->email]);
+        $participant = app('participant')->withTrashed()->firstOrNew(['email' => $signature->email()->email]);
         $participant->name = $signature->name;
         $participant->name_last = $signature->name_last;
         $participant->dob = $signature->dob;

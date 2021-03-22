@@ -68,7 +68,7 @@ class WaiverController extends Controller
         // Create the signature database entry
         $signature = new Signature;
         $signature->room_id = $request->room_id;
-        $signature->email = $request->email;
+        $signature->email_address_id = app('email_address')->findOrCreate($request->email);
         $signature->name = $request->name;
         $signature->name_last = $request->name_last;
         $signature->dob = $dob->format('Y-m-d');

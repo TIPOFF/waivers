@@ -34,6 +34,11 @@ class Signature extends BaseModel
         });
     }
 
+    public function email()
+    {
+        return $this->hasOne(app('email_address'));
+    }
+
     public function participant()
     {
         return $this->belongsTo(app('participant'), 'participant_id');

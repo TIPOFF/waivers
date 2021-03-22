@@ -15,7 +15,7 @@ class SignatureFactory extends Factory
     {
         return [
             'room_id'           => randomOrCreate(app('room')),
-            'email'             => $this->faker->unique()->safeEmail,
+            'email_address_id'  => randomOrCreate(app('email_address')),
             'first_name'        => $this->faker->name,
             'last_name'         => $this->faker->name,
             'zip_code'          => randomOrCreate(app('zip')),

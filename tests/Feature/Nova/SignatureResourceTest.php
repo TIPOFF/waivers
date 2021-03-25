@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tipoff\Waivers\Tests\Feature\Nova;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tipoff\Authorization\Models\User;
 use Tipoff\Waivers\Models\Signature;
 use Tipoff\Waivers\Tests\TestCase;
-use Tipoff\Authorization\Models\User;
 
 class SignatureResourceTest extends TestCase
 {
@@ -56,8 +56,7 @@ class SignatureResourceTest extends TestCase
      * @test
      */
     public function show_by_role(?string $role, bool $hasAccess, bool $canView)
-    {        
-
+    {
         $user = User::factory()->create();
         if ($role) {
             $user->assignRole($role);

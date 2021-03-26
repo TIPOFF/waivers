@@ -82,7 +82,7 @@ class Signature extends BaseResource
             Text::make('Last Name', 'name_last'),
             DateTime::make('Signed', 'created_at'),
             Boolean::make('Playing'),
-            nova('email_address') ? BelongsTo::make('Email Address', 'email_address', nova('email_address'))->sortable() : null,
+            nova('email') ? BelongsTo::make('Email Address', 'email', nova('email'))->sortable() : null,
             nova('participant') ? BelongsTo::make('Participant', 'participant', nova('participant')) : null,
             nova('room') ? BelongsTo::make('Room', 'room', nova('room')) : null,
             Date::make('Date of Birth', 'dob'),

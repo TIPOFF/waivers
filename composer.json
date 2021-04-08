@@ -16,13 +16,13 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "drewroberts/media": "^3.3.0",
+        "drewroberts/media": "^3.4.1",
         "tipoff/authorization": "^2.7.1",
         "tipoff/locations": "^2.8.2",
-        "tipoff/support": "^1.8.8"
+        "tipoff/support": "^1.8.9"
     },
     "require-dev": {
-        "tipoff/test-support": "^1.4.1"
+        "tipoff/test-support": "^1.4.2"
     },
     "autoload": {
         "psr-4": {

@@ -6,7 +6,6 @@ namespace Tipoff\Waivers\Tests;
 
 use DrewRoberts\Blog\BlogServiceProvider;
 use DrewRoberts\Media\MediaServiceProvider;
-use DrewRoberts\Media\MediaServiceProvider;
 use Laravel\Nova\NovaCoreServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Spatie\Permission\PermissionServiceProvider;
@@ -27,16 +26,15 @@ class TestCase extends BaseTestCase
             NovaCoreServiceProvider::class,
             NovaPackageServiceProvider::class,
             SupportServiceProvider::class,
-            AddressesServiceProvider::class,
-            LivewireServiceProvider::class,
+            PermissionServiceProvider::class,
             AuthorizationServiceProvider::class,
+            LivewireServiceProvider::class,
+            AddressesServiceProvider::class,
             MediaServiceProvider::class,
             SeoServiceProvider::class,
             BlogServiceProvider::class,
-            PermissionServiceProvider::class,
-            MediaServiceProvider::class,
-            WaiversServiceProvider::class,
             LocationsServiceProvider::class,
+            WaiversServiceProvider::class,
         ];
     }
 }

@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace Tipoff\Waivers\Tests;
 
+use DrewRoberts\Blog\BlogServiceProvider;
 use DrewRoberts\Media\MediaServiceProvider;
 use Laravel\Nova\NovaCoreServiceProvider;
+use Livewire\LivewireServiceProvider;
 use Spatie\Permission\PermissionServiceProvider;
 use Tipoff\Addresses\AddressesServiceProvider;
 use Tipoff\Authorization\AuthorizationServiceProvider;
 use Tipoff\Locations\LocationsServiceProvider;
+use Tipoff\Seo\SeoServiceProvider;
 use Tipoff\Support\SupportServiceProvider;
 use Tipoff\TestSupport\BaseTestCase;
 use Tipoff\TestSupport\Providers\NovaPackageServiceProvider;
@@ -23,12 +26,15 @@ class TestCase extends BaseTestCase
             NovaCoreServiceProvider::class,
             NovaPackageServiceProvider::class,
             SupportServiceProvider::class,
-            AddressesServiceProvider::class,
-            AuthorizationServiceProvider::class,
             PermissionServiceProvider::class,
+            AuthorizationServiceProvider::class,
+            LivewireServiceProvider::class,
+            AddressesServiceProvider::class,
             MediaServiceProvider::class,
-            WaiversServiceProvider::class,
+            SeoServiceProvider::class,
+            BlogServiceProvider::class,
             LocationsServiceProvider::class,
+            WaiversServiceProvider::class,
         ];
     }
 }

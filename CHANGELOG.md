@@ -24,3 +24,7 @@ All notable changes to `waivers` will be documented in this file.
 - register policies
 - add nova resources
 - register nova resources
+
+## 2.1.0 - 2021-04-12
+
+- new model relationships

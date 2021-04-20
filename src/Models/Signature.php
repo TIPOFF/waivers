@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tipoff\Waivers\Models;
 
 use Carbon\Carbon;
+use Tipoff\Locations\Models\Location;
 use Tipoff\Support\Contracts\Authorization\EmailAddressInterface;
 use Tipoff\Support\Contracts\Booking\BookingParticipantInterface;
 use Tipoff\Support\Contracts\Locations\LocationInterface;
@@ -91,6 +92,9 @@ class Signature extends BaseModel implements SignatureInterface
 
     public function getSignatureDate(): Carbon
     {
-        return $this->created_at;
+        /** @var Location $location */
+        $location = $this->location;
+
+        return (new Carbon($this->created_at, 'UTC'))->setTimezone($location->php_tz);
     }
 }

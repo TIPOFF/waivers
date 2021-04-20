@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tipoff\Waivers;
 
+use Tipoff\Support\Contracts\Waivers\SignatureInterface;
 use Tipoff\Support\TipoffPackage;
 use Tipoff\Support\TipoffServiceProvider;
 use Tipoff\Waivers\Events\WaiverSigned;
@@ -33,7 +34,12 @@ class WaiversServiceProvider extends TipoffServiceProvider
                     CreateParticipant::class,
                 ],
             ])
+            ->hasModelInterfaces([
+                SignatureInterface::class => Signature::class,
+            ])
+            ->hasWebRoute('web')
             ->name('waivers')
+            ->hasViews()
             ->hasConfigFile();
     }
 }

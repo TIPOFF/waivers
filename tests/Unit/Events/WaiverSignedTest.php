@@ -17,7 +17,7 @@ class WaiverSignedTest extends TestCase
     /** @test */
     public function waiver_event_fired()
     {
-        Event::fake();
+        Event::fake([WaiverSigned::class]);
 
         $signature = Signature::factory()->create();
         event(new WaiverSigned($signature));

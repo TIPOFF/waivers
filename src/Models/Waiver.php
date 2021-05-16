@@ -16,9 +16,8 @@ class Waiver extends BaseModel
     use HasPackageFactory;
 
     protected $casts = [
-        'released_at' => 'date'
+        'released_at' => 'date',
     ];
-
 
     protected static function boot()
     {

@@ -33,7 +33,7 @@ class Signature extends BaseResource
     public static $title = 'id';
 
     public static $search = [
-        'id',
+        'id', 'first_name', 'last_name'
     ];
 
     public static function indexQuery(NovaRequest $request, $query)
@@ -71,29 +71,30 @@ class Signature extends BaseResource
     public function fields(Request $request)
     {
         return array_filter([
-            Text::make('First Name', 'name'),
-            Text::make('Last Name', 'name_last'),
+            Text::make('First Name'),
+            Text::make('Last Name'),
             DateTime::make('Signed', 'created_at'),
             Boolean::make('Playing'),
-            nova('email') ? BelongsTo::make('Email Address', 'email', nova('email'))->sortable() : null,
+            nova('email_address') ? BelongsTo::make('Email Address', 'email', nova('email_address'))->sortable() : null,
             nova('participant') ? BelongsTo::make('Participant', 'participant', nova('participant')) : null,
             nova('room') ? BelongsTo::make('Room', 'room', nova('room')) : null,
+            nova('zip') ? BelongsTo::make('Zips', 'zip', nova('zip'))->nullable()->searchable() : null,
             Date::make('Date of Birth', 'dob'),
-            Number::make('Minors'),
+            Number::make('Minors')->rules('required'),
             KeyValue::make('List of Minors', 'minors_names')->rules('json')
                 ->keyLabel('#')
-                ->valueLabel('Name')
-                ->resolveUsing(function ($minors) {
+                ->valueLabel('Name'),
+                /*->resolveUsing(function ($minors) {
                     $collection = collect($minors);
                     $keyed = $collection->mapWithKeys(function ($item) {
                         return [$item['id'] => $item['name']];
                     });
 
                     return $keyed->all();
-                }),
+                }),*/
             DateTime::make('Email Sent', 'emailed_at'),
-            Boolean::make('Valid Email'),
-            ID::make(),
+            //Boolean::make('Valid Email'),
+            //ID::make(),
         ]);
     }
 }

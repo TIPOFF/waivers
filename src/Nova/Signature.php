@@ -33,7 +33,7 @@ class Signature extends BaseResource
     public static $title = 'id';
 
     public static $search = [
-        'id', 'first_name', 'last_name'
+        'id', 'first_name', 'last_name',
     ];
 
     public static function indexQuery(NovaRequest $request, $query)

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Tipoff\Waivers\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -21,17 +23,23 @@ class Waiver extends BaseResource
         'id',
     ];
 
-    //public function fieldsForIndex(NovaRequest $request)
-    //{
-    //    return array_filter([
-    //        ID::make()->sortable(),
-    //    ]);
-    //}
+    public function fieldsForIndex(NovaRequest $request)
+    {
+        return array_filter([
+            ID::make()->sortable(),
+            nova('location') ? BelongsTo::make('Location', 'location', nova('location'))->sortable() : null,
+            Date::make('Released At', 'released_at')->sortable(),
+        ]);
+    }
 
     public function fields(Request $request)
     {
         return array_filter([
             ID::make()->sortable(),
+
+            nova('location') ? BelongsTo::make('Location', 'location', nova('location')) : null,
+
+            Date::make('Released At', 'released_at'),
 
             new Panel('Waiver Agreements', $this->waiverFields()),
 
@@ -43,7 +51,7 @@ class Waiver extends BaseResource
     {
         return [
             Textarea::make('Waiver Agreement', 'waiver'),
-            Textarea::make('Minor Agreement', 'waiver_minor'),
+            Textarea::make('Minor Agreement', 'minor_statement'),
         ];
     }
 

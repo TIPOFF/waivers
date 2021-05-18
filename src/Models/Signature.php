@@ -36,7 +36,7 @@ class Signature extends BaseModel
 
     public function email()
     {
-        return $this->hasOne(app('email_address'));
+        return $this->belongsTo(app('email_address'), 'email_address_id');
     }
 
     public function participant()
@@ -47,5 +47,10 @@ class Signature extends BaseModel
     public function room()
     {
         return $this->belongsTo(app('room'), 'room_id');
+    }
+
+    public function zip()
+    {
+        return $this->belongsTo(app('zip'), 'zip_code');
     }
 }

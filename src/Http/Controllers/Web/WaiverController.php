@@ -7,7 +7,6 @@ namespace Tipoff\Waivers\Http\Controllers\Web;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Tipoff\EscapeRoom\Models\Room;
 use Tipoff\Waivers\Events\WaiverSigned;
 use Tipoff\Waivers\Models\Signature;
 

@@ -7,7 +7,6 @@ namespace Tipoff\Waivers\Http\Controllers\Web;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Tipoff\EscapeRoom\Models\Room;
 use Tipoff\Locations\Models\Location;
 use Tipoff\Waivers\Events\WaiverSigned;
 use Tipoff\Waivers\Models\Signature;
@@ -25,7 +24,7 @@ class WaiverController extends Controller
 
     public function show(Location $location)
     {
-        $rooms = Room::where('location_id', $location->id)->get();
+        $rooms = $location->rooms()->get();
 
         return view('waiver.show', [
             'location' => $location,
